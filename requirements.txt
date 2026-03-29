@@ -1,4 +1,4 @@
 streamlit
-polars
+polars[rtcompat]
 pyarrow
 pyyaml
