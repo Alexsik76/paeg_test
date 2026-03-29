@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  qa-search-app:
+    build: .
+    container_name: qa-search-system
+    restart: always
+    ports:
+      # Map container port 8501 to a free host port (e.g., 8505)
+      - "8505:8501"
+    volumes:
+      # Mount data and config for easy updates without rebuilding
+      - ./data:/app/data
+      - ./config.yaml:/app/config.yaml
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    networks:
+      - qa-network
+
+networks:
+  qa-network:
+    driver: bridge

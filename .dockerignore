@@ -1,0 +1,24 @@
+# Ignore local environment
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore local files
+generate_data.py
+qa_data.csv
+
+# Ignore version control and IDEs
+.git/
+.gitignore
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore documentation not needed in container
+README.md
+task.md
+code.md
+plans/
